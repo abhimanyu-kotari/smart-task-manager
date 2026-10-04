@@ -1,0 +1,76 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Set up project structure",
+      "description": "Initialize the frontend and backend folders with required dependencies.",
+      "priority": "high",
+      "status": "completed",
+      "dueDate": "2026-10-01",
+      "createdAt": "2026-09-28T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Design database schema",
+      "description": "Plan the data model for tasks including fields like priority, status, and due date.",
+      "priority": "high",
+      "status": "completed",
+      "dueDate": "2026-10-02",
+      "createdAt": "2026-09-29T09:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Build REST API endpoints",
+      "description": "Create CRUD endpoints for tasks using Express.js and file-based storage.",
+      "priority": "high",
+      "status": "in-progress",
+      "dueDate": "2026-10-05",
+      "createdAt": "2026-09-30T08:30:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Implement React UI components",
+      "description": "Build reusable components: TaskCard, TaskForm, Navbar, StatCard, and TaskFilter.",
+      "priority": "medium",
+      "status": "in-progress",
+      "dueDate": "2026-10-06",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Add priority filtering",
+      "description": "Allow users to filter the task list by priority level (high, medium, low).",
+      "priority": "medium",
+      "status": "pending",
+      "dueDate": "2026-10-07",
+      "createdAt": "2026-10-02T11:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "title": "Write unit tests",
+      "description": "Add tests for API endpoints and React component rendering.",
+      "priority": "low",
+      "status": "pending",
+      "dueDate": "2026-10-10",
+      "createdAt": "2026-10-03T09:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "title": "Add responsive design",
+      "description": "Ensure the application looks great on mobile, tablet, and desktop devices.",
+      "priority": "medium",
+      "status": "pending",
+      "dueDate": "2026-10-08",
+      "createdAt": "2026-10-03T14:00:00.000Z"
+    },
+    {
+      "id": "8",
+      "title": "Deploy to production",
+      "description": "Deploy backend to a cloud platform and frontend to a CDN.",
+      "priority": "low",
+      "status": "pending",
+      "dueDate": "2026-10-15",
+      "createdAt": "2026-10-04T08:00:00.000Z"
+    }
+  ]
+}
