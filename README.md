@@ -33,7 +33,7 @@ smart-task-manager/
 │   │   │   ├── Tasks.jsx
 │   │   │   └── AddTask.jsx
 │   │   ├── App.jsx
-│   │   ├── main.jsx
+│   │   ├── index.js
 │   │   └── styles.css
 │   └── package.json
 │
@@ -104,9 +104,9 @@ The server will run on `http://localhost:5000`
 ## How to Run Frontend
 From the `frontend` directory, run:
 ```bash
-npm run dev
+npm start
 ```
-Open the provided local URL (usually `http://localhost:5173`) in your browser.
+Open the provided local URL (usually `http://localhost:3000`) in your browser.
 
 ## Basic Usage Instructions
 - Open the app, and you'll be redirected to the **Dashboard** to see current statistics.
