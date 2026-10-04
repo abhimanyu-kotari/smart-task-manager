@@ -8,14 +8,19 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "cors": "^2.8.6",
+    "express": "^4.22.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": ["task-manager", "express", "rest-api"],
+  "keywords": [
+    "task-manager",
+    "express",
+    "rest-api"
+  ],
   "author": "abhimanyu-kotari",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "commonjs"
 }

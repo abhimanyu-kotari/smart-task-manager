@@ -1,34 +1,41 @@
-import React from 'react';
-
-const PRIORITIES = ['all', 'high', 'medium', 'low'];
-const STATUSES = ['all', 'pending', 'in-progress', 'completed'];
-
-function TaskFilter({ priorityFilter, setPriorityFilter, statusFilter, setStatusFilter }) {
+function TaskFilter({ searchTerm, setSearchTerm, priorityFilter, setPriorityFilter, statusFilter, setStatusFilter }) {
   return (
-    <div style={{ marginBottom: '20px' }}>
-      <div className="task-filter" style={{ marginBottom: '10px' }}>
-        <span className="filter-label">Priority:</span>
-        {PRIORITIES.map((p) => (
-          <button
-            key={p}
-            className={`filter-btn ${p !== 'all' ? p : ''} ${priorityFilter === p ? 'active' : ''}`}
-            onClick={() => setPriorityFilter(p)}
-          >
-            {p.charAt(0).toUpperCase() + p.slice(1)}
-          </button>
-        ))}
+    <div className="filters-container">
+      <div className="filter-group">
+        <input 
+          type="text" 
+          placeholder="Search tasks..." 
+          className="search-input"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
-      <div className="task-filter">
-        <span className="filter-label">Status:</span>
-        {STATUSES.map((s) => (
-          <button
-            key={s}
-            className={`filter-btn ${statusFilter === s ? 'active' : ''}`}
-            onClick={() => setStatusFilter(s)}
-          >
-            {s === 'in-progress' ? 'In Progress' : s.charAt(0).toUpperCase() + s.slice(1)}
-          </button>
-        ))}
+      
+      <div className="filter-group">
+        <label>Priority:</label>
+        <select 
+          className="form-control"
+          value={priorityFilter}
+          onChange={(e) => setPriorityFilter(e.target.value)}
+        >
+          <option value="All">All</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Status:</label>
+        <select 
+          className="form-control"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+        >
+          <option value="All">All</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
       </div>
     </div>
   );

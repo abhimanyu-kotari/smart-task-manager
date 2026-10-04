@@ -1,45 +1,11 @@
-# Dependencies
 node_modules/
-.pnp
-.pnp.js
-
-# Production builds
-build/
 dist/
-
-# Environment files
+build/
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
+.DS_Store
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Testing
-coverage/
+temporary files

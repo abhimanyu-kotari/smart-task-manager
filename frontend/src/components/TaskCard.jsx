@@ -1,80 +1,104 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const PRIORITY_LABELS = { high: '🔴 High', medium: '🟠 Medium', low: '⚪ Low' };
-const STATUS_LABELS = {
-  pending: '⏳ Pending',
-  'in-progress': '🔵 In Progress',
-  completed: '✅ Completed'
-};
+function TaskCard({ task, onComplete, onEdit, onDelete }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editData, setEditData] = useState({ ...task });
 
-function TaskCard({ task, onDelete, onStatusChange }) {
-  const isOverdue =
-    task.dueDate &&
-    new Date(task.dueDate) < new Date() &&
-    task.status !== 'completed';
-
-  const formatDate = (dateStr) => {
-    if (!dateStr) return null;
-    const date = new Date(dateStr + 'T00:00:00');
-    return date.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
+  const handleEditChange = (e) => {
+    setEditData({
+      ...editData,
+      [e.target.name]: e.target.value
     });
   };
 
-  const getNextStatus = () => {
-    if (task.status === 'pending') return 'in-progress';
-    if (task.status === 'in-progress') return 'completed';
-    return 'pending';
+  const handleSave = () => {
+    onEdit(editData);
+    setIsEditing(false);
   };
 
-  const getNextStatusLabel = () => {
-    const next = getNextStatus();
-    if (next === 'in-progress') return '▶️ Start';
-    if (next === 'completed') return '✅ Complete';
-    return '↩️ Reopen';
+  const handleCancel = () => {
+    setEditData({ ...task });
+    setIsEditing(false);
   };
 
-  return (
-    <div className={`task-card ${task.priority} ${task.status === 'completed' ? 'completed' : ''}`}>
-      <div className="task-card-body">
-        <h3 className="task-card-title">{task.title}</h3>
-        {task.description && (
-          <p className="task-card-desc">{task.description}</p>
-        )}
-        <div className="task-card-meta">
-          <span className={`badge badge-priority-${task.priority}`}>
-            {PRIORITY_LABELS[task.priority] || task.priority}
-          </span>
-          <span className={`badge badge-status-${task.status}`}>
-            {STATUS_LABELS[task.status] || task.status}
-          </span>
-          {task.dueDate && (
-            <span className={`task-due-date ${isOverdue ? 'overdue' : ''}`}>
-              📅 {isOverdue ? '⚠️ ' : ''}{formatDate(task.dueDate)}
-            </span>
-          )}
+  if (isEditing) {
+    return (
+      <div className={`task-card ${task.priority.toLowerCase()}`}>
+        <div className="edit-form">
+          <input 
+            type="text" 
+            name="title" 
+            className="form-control"
+            value={editData.title} 
+            onChange={handleEditChange} 
+          />
+          <textarea 
+            name="description" 
+            className="form-control"
+            value={editData.description} 
+            onChange={handleEditChange} 
+          />
+          <select 
+            name="priority" 
+            className="form-control"
+            value={editData.priority} 
+            onChange={handleEditChange}
+          >
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <input 
+            type="date" 
+            name="dueDate" 
+            className="form-control"
+            value={editData.dueDate} 
+            onChange={handleEditChange} 
+          />
+          <select 
+            name="status" 
+            className="form-control"
+            value={editData.status} 
+            onChange={handleEditChange}
+          >
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+          
+          <div className="task-actions">
+            <button className="btn-success" onClick={handleSave}>Save</button>
+            <button className="btn-secondary" onClick={handleCancel}>Cancel</button>
+          </div>
         </div>
       </div>
-      <div className="task-card-actions">
-        <button
-          className="btn btn-sm btn-success"
-          onClick={() => onStatusChange(task.id, getNextStatus())}
-          title={`Mark as ${getNextStatus()}`}
+    );
+  }
+
+  return (
+    <div className={`task-card ${task.status === 'Completed' ? 'completed' : task.priority.toLowerCase()}`}>
+      <div className="task-header">
+        <div className="task-title">{task.title}</div>
+        <div className="task-badges">
+          <span className={`badge ${task.priority.toLowerCase()}`}>{task.priority}</span>
+          <span className={`badge ${task.status.toLowerCase()}`}>{task.status}</span>
+        </div>
+      </div>
+      
+      <p className="task-desc">{task.description}</p>
+      
+      {task.dueDate && (
+        <p className="task-date">Due: {task.dueDate}</p>
+      )}
+      
+      <div className="task-actions">
+        <button 
+          className="btn-success" 
+          onClick={() => onComplete(task)}
         >
-          {getNextStatusLabel()}
+          {task.status === 'Completed' ? 'Mark Pending' : 'Complete'}
         </button>
-        <Link to={`/tasks/edit/${task.id}`} className="btn btn-sm btn-secondary">
-          ✏️ Edit
-        </Link>
-        <button
-          className="btn btn-sm btn-danger"
-          onClick={() => onDelete(task.id)}
-        >
-          🗑️ Delete
-        </button>
+        <button className="btn-primary" onClick={() => setIsEditing(true)}>Edit</button>
+        <button className="btn-danger" onClick={() => onDelete(task.id)}>Delete</button>
       </div>
     </div>
   );

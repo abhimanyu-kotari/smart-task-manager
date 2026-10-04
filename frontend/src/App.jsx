@@ -1,27 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
-import TaskList from './pages/TaskList';
+import Tasks from './pages/Tasks';
 import AddTask from './pages/AddTask';
-import EditTask from './pages/EditTask';
-import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/tasks" element={<TaskList />} />
-            <Route path="/tasks/add" element={<AddTask />} />
-            <Route path="/tasks/edit/:id" element={<EditTask />} />
-          </Routes>
-        </main>
+    <BrowserRouter>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/add-task" element={<AddTask />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
