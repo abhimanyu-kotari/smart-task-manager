@@ -35,7 +35,7 @@ function Dashboard() {
   const completed = tasks.filter(t => t.status === 'Completed').length;
   const highPriority = tasks.filter(t => t.priority === 'High').length;
 
-  const recentTasks = [...tasks].reverse().slice(0, 3); // Get 3 most recent
+  const recentTasks = [...tasks].reverse(); // Get all tasks in reverse order
 
   return (
     <div>

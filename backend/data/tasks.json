@@ -1,42 +1,34 @@
 [
   {
-    "id": "1",
-    "title": "Complete DBMS Assignment",
-    "description": "Write SQL queries and ER diagrams.",
+    "id": "1791340765821",
+    "title": "DBMS Exam Preparation",
+    "description": "Prepare SQL and normalization",
     "priority": "High",
-    "dueDate": "2023-11-20",
+    "dueDate": "2026-10-10",
     "status": "Pending"
   },
   {
-    "id": "2",
-    "title": "Study Deep Learning",
-    "description": "Review chapters 4 and 5.",
+    "id": "1791340798882",
+    "title": "NLP Assignment",
+    "description": "Complete Module 3 questions",
     "priority": "Medium",
-    "dueDate": "2023-11-22",
-    "status": "Completed"
-  },
-  {
-    "id": "3",
-    "title": "Submit Project Report",
-    "description": "Final draft submission.",
-    "priority": "High",
-    "dueDate": "2023-11-25",
+    "dueDate": "2026-10-12",
     "status": "Pending"
   },
   {
-    "id": "4",
-    "title": "Practice React",
-    "description": "Build a simple task manager.",
+    "id": "1791340826510",
+    "title": "DSA Revision",
+    "description": "Revise sorting and graph algorithms",
     "priority": "Low",
-    "dueDate": "2023-11-30",
-    "status": "Completed"
+    "dueDate": "2026-10-15",
+    "status": "Pending"
   },
   {
-    "id": "5",
-    "title": "Prepare for Viva",
-    "description": "Review FSD concepts and React basics.",
+    "id": "1791340877548",
+    "title": "AI ML Project",
+    "description": "Complete model evaluation",
     "priority": "High",
-    "dueDate": "2023-12-05",
+    "dueDate": "2026-10-13",
     "status": "Pending"
   }
 ]
