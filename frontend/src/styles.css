@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -12,6 +14,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #111;
   letter-spacing: -0.02em;
@@ -45,6 +48,7 @@ h3 {
 }
 
 .navbar h1 {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff;
@@ -58,6 +62,7 @@ h3 {
 }
 
 .nav-links a {
+  font-family: 'Inter', sans-serif;
   color: #a0a0a0;
   text-decoration: none;
   font-weight: 500;
@@ -95,6 +100,7 @@ h3 {
 }
 
 .stat-card h3 {
+  font-family: 'Poppins', sans-serif;
   color: #666;
   font-size: 0.9rem;
   font-weight: 600;
@@ -104,6 +110,7 @@ h3 {
 }
 
 .stat-card p {
+  font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
   color: #111;
@@ -149,6 +156,7 @@ h3 {
 }
 
 .task-title {
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #111;
@@ -161,6 +169,7 @@ h3 {
 
 /* Minimal badges */
 .badge {
+  font-family: 'Inter', sans-serif;
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 0.75rem;
@@ -177,12 +186,14 @@ h3 {
 .badge.completed { background-color: #f7f7f7; color: #aaa; border: 1px dashed #ccc; }
 
 .task-desc {
+  font-family: 'Inter', sans-serif;
   color: #444;
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
 
 .task-date {
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   color: #888;
   font-weight: 500;
@@ -196,6 +207,7 @@ h3 {
 
 /* Buttons */
 button {
+  font-family: 'Poppins', sans-serif;
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -255,6 +267,7 @@ button {
 }
 
 .form-group label {
+  font-family: 'Inter', sans-serif;
   display: block;
   margin-bottom: 10px;
   font-weight: 600;
@@ -263,6 +276,7 @@ button {
 }
 
 .form-control {
+  font-family: 'Inter', sans-serif;
   width: 100%;
   padding: 12px 16px;
   border: 1px solid #dcdcdc;
@@ -280,6 +294,7 @@ button {
 }
 
 .error-text {
+  font-family: 'Inter', sans-serif;
   color: #d63031;
   font-size: 0.85rem;
   margin-top: 6px;
@@ -307,12 +322,14 @@ button {
 }
 
 .filter-group label {
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   color: #444;
 }
 
 .search-input {
+  font-family: 'Inter', sans-serif;
   flex-grow: 1;
   min-width: 250px;
   padding: 10px 16px;
